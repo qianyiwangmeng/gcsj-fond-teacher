@@ -1,12 +1,17 @@
 import React, { lazy } from "react"
 import { Navigate } from "react-router-dom"
 import Home from "../views/Home"
-import Page1 from "@/views/Page1"
-import Page2 from "@/views/Page2"
+import Login from "../views/Login"
 
-const About = lazy(() => import("../views/About"))
-// const Home = lazy(() => import("../views/Home")) // 主页不用懒加载
-const User = lazy(() => import("../views/User"))
+// const About = lazy(() => import("../views/About"))
+// // const Home = lazy(() => import("../views/Home")) // 主页不用懒加载
+// const User = lazy(() => import("../views/User"))
+
+const Page1 = lazy(() => import("../views/Page1"))
+const Page2 = lazy(() => import("../views/Page2"))
+const Page301 = lazy(() => import("../views/Page301"))
+
+
 
 
 const withLoadingComponent = (comp: JSX.Element) => (
@@ -22,7 +27,7 @@ const routes = [
         element: <Navigate to="/page1" />
     },
     {
-        path: "",
+        path: "/",
         element: <Home />,
         children: [
             {
@@ -32,9 +37,23 @@ const routes = [
             {
                 path: "/page2",
                 element: withLoadingComponent(<Page2 />)
+            },
+            {
+                path: "/page3/page301",
+                element: withLoadingComponent(<Page301 />)
             }
         ]
     },
+    {
+        path: "/login",
+        element: <Login />
+    },
+
+    // 访问其余路径的时候 直接跳到首页  
+    {
+        path: "*",
+        element: <Navigate to="/page1" />
+    }
 ]
 
 
