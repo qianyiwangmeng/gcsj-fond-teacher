@@ -7,9 +7,11 @@ import Login from "../views/Login"
 // // const Home = lazy(() => import("../views/Home")) // 主页不用懒加载
 // const User = lazy(() => import("../views/User"))
 
-const Page1 = lazy(() => import("../views/Page1"))
-const Page2 = lazy(() => import("../views/Page2"))
+
+const Page1 = lazy(() => import("../views/PwdManage"))
+const Page2 = lazy(() => import("../views/privateNotebook"))
 const Page301 = lazy(() => import("../views/Page301"))
+
 
 
 

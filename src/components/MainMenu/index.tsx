@@ -50,12 +50,12 @@ type MenuItem = {
 
 const items: MenuItem[] = [
     {
-        label: "栏目1",
+        label: "密码管理",
         key: "/page1",
         icon: <PieChartOutlined />,
     },
     {
-        label: "栏目2",
+        label: "隐私笔记",
         key: "/page2",
         icon: <PieChartOutlined />,
     },
@@ -121,7 +121,7 @@ const Copm: React.FC = () => {
 
     const navigateTo = useNavigate()
 
-    console.log("加载了菜单...", currentRoute); // 加载了两次是开发模式 生产模式不会。 如果开发模式不想加载两次的话就 取消严格模式
+    // console.log("加载了菜单...", currentRoute); // 加载了两次是开发模式 生产模式不会。 如果开发模式不想加载两次的话就 取消严格模式
 
 
     const menuClick = (e: { key: string }) => {

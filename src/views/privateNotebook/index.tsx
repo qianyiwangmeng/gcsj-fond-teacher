@@ -1,9 +1,10 @@
 const view = () => {
+
     return (
         <div>
-            我是Page1组件
+            私密笔记
         </div>
     )
 }
 
-export default view
+export default view;

@@ -1,9 +1,12 @@
+import { Button } from 'antd';
+
 const view = () => {
+
     return (
         <div>
-            我是用户组件
+            密码管理
         </div>
-    )
+    );
 }
 
 export default view

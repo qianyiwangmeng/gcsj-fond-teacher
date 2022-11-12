@@ -1,7 +1,6 @@
-
-import { Breadcrumb, Layout } from 'antd';
+import { Layout, Button, Popconfirm, message } from 'antd';
 import React, { useState } from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom';
 import MainMenu from '@/components/MainMenu'
 
 const { Header, Content, Footer, Sider } = Layout;
@@ -9,6 +8,19 @@ const { Header, Content, Footer, Sider } = Layout;
 
 const View: React.FC = () => {
     const [collapsed, setCollapsed] = useState(false);
+    const navigateTo = useNavigate()
+
+    const confirm = () => {
+        // console.log(e);
+        localStorage.removeItem("token")
+        navigateTo("/login")
+        message.success('登出成功');
+    };
+
+    const cancel = () => {
+        // console.log(e);
+        message.error('取消登出');
+    };
 
 
     return (
@@ -23,10 +35,18 @@ const View: React.FC = () => {
                 {/* 右边头部 */}
                 <Header className="site-layout-background" style={{ paddingLeft: '16px' }} >
                     {/* 面包屑放头部里 */}
-                    <Breadcrumb style={{ lineHeight: '64px' }}>
-                        <Breadcrumb.Item>User</Breadcrumb.Item>
-                        <Breadcrumb.Item>Bill</Breadcrumb.Item>
-                    </Breadcrumb>
+                    {/* <Breadcrumb style={{ lineHeight: '64px' }}> */}
+                    <Popconfirm
+                        title="Are you sure to logout?"
+                        onConfirm={confirm}
+                        onCancel={cancel}
+                        okText="是"
+                        cancelText="否"
+                    >
+                        <Button type="primary" style={{ float: "right", margin: 15 }}>登出</Button>
+
+                    </Popconfirm>
+                    {/* </Breadcrumb> */}
                 </Header>
                 {/* 右边内容 */}
                 <Content style={{ margin: '16px 16px 0' }} className="site-layout-background">
@@ -38,7 +58,7 @@ const View: React.FC = () => {
                     <Outlet />
                     {/* 这里放窗口 */}
                 </Content>
-                <Footer style={{ textAlign: 'center', padding: 0, lineHeight: '48px' }}>Ant Design ©2018 Created by Ant UED</Footer>
+                <Footer style={{ textAlign: 'center', padding: 0, lineHeight: '48px' }}>smyx ©2022 Created by Dream Chian</Footer>
             </Layout>
         </Layout>
     );
