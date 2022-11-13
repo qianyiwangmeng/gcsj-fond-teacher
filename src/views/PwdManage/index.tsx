@@ -96,7 +96,7 @@ const view = () => {
                         onChange={onchangeGetUrl}
                         value={getUrlVal}>
                     </input>
-                    <p className="showPwd">{getPwdVal}</p>
+                    <span style={{ float: "left", marginLeft: "7px", fontSize: "20px" }}>密码</span> <p className="showPwd">{getPwdVal}</p>
                 </div>
                 <button className=".btn"
                     onClick={callPassword}
