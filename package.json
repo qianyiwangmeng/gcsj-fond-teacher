@@ -2,13 +2,13 @@
   "name": "demo-management",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
   "scripts": {
     "dev": "vite --host --port 3002",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@alipay/mychain": "file:alipay-mychain-0.2.27.tgz",
     "@ant-design/icons": "^4.7.0",
     "@antchain/jssdk": "^1.0.0-beta.20",
     "antd": "^4.23.6",

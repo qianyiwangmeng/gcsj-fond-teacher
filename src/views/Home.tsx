@@ -27,7 +27,9 @@ const View: React.FC = () => {
         <Layout style={{ minHeight: '100vh' }}>
             {/* 左边的侧边栏 */}
             <Sider collapsible collapsed={collapsed} onCollapse={value => setCollapsed(value)}>
-                <div className="logo" />
+                <div className="logo" >
+                    <span style={{ fontSize: "16px", marginLeft: "20px", color: "black" }} >隐私笔记本</span>
+                </div>
                 <MainMenu />
             </Sider>
             {/* 右边的内容 */}
@@ -58,7 +60,7 @@ const View: React.FC = () => {
                     <Outlet />
                     {/* 这里放窗口 */}
                 </Content>
-                <Footer style={{ textAlign: 'center', padding: 0, lineHeight: '48px' }}>smyx ©2022 Created by Dream Chian</Footer>
+                <Footer style={{ textAlign: 'center', padding: 0, lineHeight: '48px' }}>隐私笔记本 ©2022 Created by Dream Chian</Footer>
             </Layout>
         </Layout>
     );

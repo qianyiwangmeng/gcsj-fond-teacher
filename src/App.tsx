@@ -54,7 +54,6 @@ function App() {
 
   return (
     <div className="App">
-
       <BeforeRouterEnter />
     </div>
   )

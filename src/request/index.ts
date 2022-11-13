@@ -2,15 +2,20 @@ import axios from "axios";
 
 const instance = axios.create({
     baseURL: "http://127.0.0.1:8080",
-    timeout: 20000
+    timeout: 20000,
 })
 
 // 请求拦截器
-instance.interceptors.request.use(config => {
-    return config
-}, err => {
-    return Promise.reject(err)
-});
+instance.interceptors.request.use(
+    config => {
+        const token = localStorage.getItem("token");
+        if (config && config.headers) { // 多一步判断
+            config.headers['Authorization'] = token
+        }
+        return config
+    }, err => {
+        return Promise.reject(err)
+    });
 
 // 响应拦截器
 
@@ -19,5 +24,7 @@ instance.interceptors.response.use(res => {
 }, err => {
     return Promise.reject(err)
 })
+
+
 
 export default instance

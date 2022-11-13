@@ -9,7 +9,8 @@ import Login from "../views/Login"
 
 
 const Page1 = lazy(() => import("../views/PwdManage"))
-const Page2 = lazy(() => import("../views/privateNotebook"))
+const Page201 = lazy(() => import("../views/PrivateNotebook"))
+const Page202 = lazy(() => import("../views/GetprivateNotebook"))
 const Page301 = lazy(() => import("../views/Page301"))
 
 
@@ -37,8 +38,12 @@ const routes = [
                 element: withLoadingComponent(<Page1 />)
             },
             {
-                path: "/page2",
-                element: withLoadingComponent(<Page2 />)
+                path: "/page2/page201",
+                element: withLoadingComponent(<Page201 />)
+            },
+            {
+                path: "/page2/page202",
+                element: withLoadingComponent(<Page202 />)
             },
             {
                 path: "/page3/page301",

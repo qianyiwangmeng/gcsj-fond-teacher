@@ -95,7 +95,7 @@ const View = () => {
             <div className={styles.loginBox + " loginbox"}>
                 {/* 标题部分 */}
                 <div className={styles.title}>
-                    <h1>私密印象</h1>
+                    <h1>隐私笔记本</h1>
                 </div>
 
                 <div className="form">

@@ -1,0 +1,73 @@
+$Box-bkg1: rgb(250, 235, 215, 0.6);
+$Box-bkg2: rgba(228, 171, 97, 0.1);
+
+
+.PwdManageBox {
+    width: 90%;
+    height: 90%;
+    margin-top: 2%;
+    margin-left: 2%;
+    background: linear-gradient(to right bottom, $Box-bkg1, $Box-bkg2);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 15%;
+
+    .twoItem {
+        background-color: hsl(230, 100%, 77%, .1);
+        position: relative;
+        text-align: center;
+
+        h1 {
+            margin-top: 20px;
+            font-size: 16px;
+            font-weight: 700;
+            color: rgba(5, 45, 71, 0.8);
+        }
+
+        .content {
+            position: absolute;
+            transform: translate(-50%, -50%);
+            width: 400px;
+            top: 30%;
+            left: 40%;
+        }
+
+        input {
+
+            width: 300px;
+            border: 1px solid rgb(127, 255, 212, .4);
+
+            &:focus {
+                outline: none;
+                border: 1px solid rgb(12, 177, 231, .6)
+            }
+        }
+
+        span {
+            margin-right: 20px;
+            font-size: 1rem;
+        }
+
+        button {
+
+
+            display: block;
+            width: 100px;
+            height: 35px;
+            margin-top: 50%;
+            margin-left: 60px;
+            transition: all .5;
+            border: 1px solid rgb(255, 0, 0, .2);
+            box-shadow: 0 5px 4px rgb(0, 0, 0, .4);
+
+            &:hover {
+                background-color: rgb(0, 255, 255, .1);
+                transform: translateY(-4px);
+            }
+
+            &:active {
+                transform: translateY(-2px);
+            }
+        }
+    }
+}

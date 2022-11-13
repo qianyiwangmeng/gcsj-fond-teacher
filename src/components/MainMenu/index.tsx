@@ -58,45 +58,55 @@ const items: MenuItem[] = [
         label: "隐私笔记",
         key: "/page2",
         icon: <PieChartOutlined />,
-    },
-    {
-        label: "栏目3",
-        key: "/page3",
-        icon: <UserOutlined />,
         children: [
             {
-                label: "栏目301",
-                key: "/page3/page301"
+                label: "写隐私笔记",
+                key: "/page2/page201"
             },
             {
-                label: "栏目302",
-                key: "/page3/page302"
+                label: "获取隐私笔记",
+                key: "/page2/page202"
             },
-            {
-                label: "栏目303",
-                key: "/page3/page303"
-            }
         ]
     },
-    {
-        label: "栏目4",
-        key: "/page4",
-        icon: <TeamOutlined />,
-        children: [
-            {
-                label: "栏目401",
-                key: "/page4/page401"
-            },
-            {
-                label: "栏目402",
-                key: "/page4/page402"
-            },
-            {
-                label: "栏目403",
-                key: "/page4/page403"
-            }
-        ]
-    },
+    // {
+    //     label: "栏目3",
+    //     key: "/page3",
+    //     icon: <UserOutlined />,
+    //     children: [
+    //         {
+    //             label: "栏目301",
+    //             key: "/page3/page301"
+    //         },
+    //         {
+    //             label: "栏目302",
+    //             key: "/page3/page302"
+    //         },
+    //         {
+    //             label: "栏目303",
+    //             key: "/page3/page303"
+    //         }
+    //     ]
+    // },
+    // {
+    //     label: "栏目4",
+    //     key: "/page4",
+    //     icon: <TeamOutlined />,
+    //     children: [
+    //         {
+    //             label: "栏目401",
+    //             key: "/page4/page401"
+    //         },
+    //         {
+    //             label: "栏目402",
+    //             key: "/page4/page402"
+    //         },
+    //         {
+    //             label: "栏目403",
+    //             key: "/page4/page403"
+    //         }
+    //     ]
+    // },
 ]
 
 const Copm: React.FC = () => {
