@@ -1,7 +1,11 @@
 import axios from "axios";
 
 const instance = axios.create({
-    baseURL: "http://127.0.0.1:8080",
+    baseURL: "http://47.108.150.32:8099/laboratory",
+    // headers:{
+    //     'Access-Control-Allow-Origin':"*",
+    //     'Content-Type':"application/octet-stream"
+    // },
     timeout: 20000,
 })
 
@@ -10,7 +14,7 @@ instance.interceptors.request.use(
     config => {
         const token = localStorage.getItem("token");
         if (config && config.headers) { // 多一步判断
-            config.headers['Authorization'] = token
+            config.headers['x-token'] = token
         }
         return config
     }, err => {

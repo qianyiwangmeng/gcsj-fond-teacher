@@ -11,7 +11,7 @@ interface RegisterAPIRes {
 
 
 interface LoginAPIReq {
-    username: string
+    name: string
     password: string
 }
 
